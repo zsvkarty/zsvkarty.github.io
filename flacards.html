@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards - Dostaň se i na práva!</title>
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header" data-header>
+    <div class="container">
+      <a href="index.html" class="logo">Dostaň se i na práva!</a>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="index.html" class="navbar-link" data-nav-link>Domů</a></li>
+          <li><a href="#terms" class="navbar-link" data-nav-link>Karticky</a></li>
+          <li><a href="#contact" class="navbar-link" data-nav-link>Kontakt</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    
+        
+    
+    <section class="section" id="flashcards" aria-label="Karticky na procvičení">
+        <br>
+        <h2 class="h2 section-title">Preview našich kartiček</h2>
+        
+        <div class="flashcards-container">
+            <div class="flashcard" onclick="showFullscreenImage('./assets/images/card1.jpg')">
+              <p class="term">Spor o univerzálie v klasickém období</p>
+            </div>
+          </div>
+          
+          <!-- Fullscreen Image Overlay -->
+          <div class="fullscreen-overlay" id="fullscreenOverlay" onclick="hideFullscreenImage()">
+            <img src="" alt="Definition" id="fullscreenImage" />
+          </div>
+            <!-- Add more flashcards as needed -->
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="showFullscreenImage('./assets/images/card2.jpg')">
+                  <p class="term">Co je to relativní právo?</p>
+                </div>
+              </div>
+
+              <div class="flashcards-container">
+                <div class="flashcard" onclick="showFullscreenImage('./assets/images/card3.jpg')">
+                  <p class="term">Co je to absolutní právo?</p>
+                </div>
+              </div>
+
+              <div class="flashcards-container">
+                <div class="flashcard" onclick="showFullscreenImage('./assets/images/card4.jpg')">
+                  <p class="term">Co je to cyklická nezaměstnanost?</p>
+                </div>
+              </div>
+              
+              <div class="flashcards-container">
+                <div class="flashcard" onclick="showFullscreenImage('./assets/images/card5.jpg')">
+                  <p class="term">Jaký vojenské konflikty bezprostředně předcházeli 1. svět. válce?</p>
+                </div>
+              </div>
+
+              <div class="flashcards-container">
+                <div class="flashcard" onclick="showFullscreenImage('./assets/images/card6.jpg')">
+                  <p class="term">Co je to elasticita poptávky?</p>
+                </div>
+              </div>
+
+              <div class="buy-button-container">
+                <a href="https://www.patreon.com/zsvscio" target="_blank" class="buy-button">
+                  Kupte nyní jen za 199 ,-
+                </a>
+              </div>
+             
+
+              <!-- Fullscreen Image Overlay -->
+              <div class="fullscreen-overlay" id="fullscreenOverlay" onclick="hideFullscreenImage()">
+                <img src="" alt="Definition" id="fullscreenImage" />
+              </div>
+
+              
+    </section>
+  </main>
+
+
+  <section class="section contact" id="contact" aria-label="contact">
+    <div class="container">
+
+      <div class="contact-content">
+
+        <p class="section-subtitle">Kontakt</p>
+
+        <h2 class="h2 section-title">Potřebuješ s něčím poradit?</h2>
+
+        <p class="section-text">
+          Pro kontakt s námi prosím vyplňte formulář v této sekci. 
+          Nezapomeňte vyplnit svůj e-mail a jméno.
+        </p>
+
+        <ul class="contact-list">
+
+
+
+    
+
+          <li class="contact-item">
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+
+            <a href="mailto:nasmejl@gmail.com" class="contact-link">info@zsvscio.cz</a>
+          </li>
+
+          <li class="contact-item">
+            <ion-icon name="globe-outline" aria-hidden="true"></ion-icon>
+
+            <a href="https://zsvscio.cz/" class="contact-link">www.zsvscio.cz</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <form action="https://formspree.io/f/xdkorvvw" method="POST" class="contact-form">
+        <input type="text" name="name" aria-label="name" placeholder="Jméno" required class="input-field">
+        <input type="email" name="email" aria-label="email" placeholder="Email" required class="input-field">
+        <textarea name="message" aria-label="message" placeholder="Zpráva" required class="input-field"></textarea>
+        <button type="submit" class="submit-btn">
+          <span class="span">Submit</span>
+          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+</article>
+</main>
+
+
+  <footer class="footer">
+    <div class="container">
+
+      <p class="copyright">
+        Tento web je nezávislý a není přímo spojený se společností Scio</a>
+      </p>
+
+      <ul class="social-list">
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-patreon"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.patreon.com/zsvscio" class="logo1">Patreon</a>
+
+        </li>
+
+        
+      </ul>
+
+    </div>
+  <script src="./assets/js/script.js" defer></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
