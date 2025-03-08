@@ -17,22 +17,26 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: `Webhook Error: ${err.message}` };
   }
 
-  if (stripeEvent.type === 'charge.succeeded') {
-    const email = stripeEvent.data.object.billing_details.email;
-    const lineItems = stripeEvent.data.object.lines.data; // Get line items from the charge
-    let productMessage = '';
+  if (stripeEvent.type === 'checkout.session.completed') {
+    const session = stripeEvent.data.object;
+    const email = session.customer_email || session.customer_details.email;
+
+    // Fetch line items from the session
+    const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
+    let productMessage = 'Thank you for your purchase! Download link will be sent separately.';
 
     // Check each line item to determine the product
-    for (const item of lineItems) {
-      const productId = item.price.product; // This is the product ID
+    for (const item of lineItems.data) {
+      const productId = item.price.product;
+      console.log('Product ID:', productId); // Log the product ID for debugging
       switch (productId) {
-        case 'prod_RtsvHFmxsZsBDn': // Replace with your Product ID for Flashcards Set 1
+        case 'prod_RtsvHFmxsZsBDn':
           productMessage = 'Thank you for purchasing vse potrebne k priprave! Download your flashcards here: https://drive.google.com/file/d/SET1_LINK';
           break;
-        case 'prod_Ru9JqsSEfQs1Ym': // Replace with your Product ID for Flashcards Set 2
+        case 'prod_Ru9JqsSEfQs1Ym':
           productMessage = 'Thank you for purchasing Rapid! Download your flashcards here: https://drive.google.com/file/d/SET2_LINK';
           break;
-        case 'prod_Ru9KzvfLOGtVOF': // Replace with your Product ID for Flashcards Set 3
+        case 'prod_Ru9KzvfLOGtVOF':
           productMessage = 'Thank you for purchasing Srovnavaci! Download your flashcards here: https://drive.google.com/file/d/SET3_LINK';
           break;
         default:
@@ -42,7 +46,7 @@ exports.handler = async (event) => {
 
     const msg = {
       to: email,
-      from: 'info@dostansenaprava.cz', // Replace with your verified SendGrid email
+      from: 'info@dostansenaprava.cz',
       subject: 'Your Flashcards Purchase',
       text: productMessage,
     };
