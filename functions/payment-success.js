@@ -30,13 +30,13 @@ exports.handler = async (event) => {
       const productId = item.price.product;
       console.log('Product ID:', productId); // Log the product ID for debugging
       switch (productId) {
-        case 'prod_RtsvHFmxsZsBDn':
+        case 'prod_RvQCWmZJqAU0nC':
           productMessage = 'Thank you for purchasing vse potrebne k priprave! Download your flashcards here: https://drive.google.com/file/d/SET1_LINK';
           break;
-        case 'prod_Ru9JqsSEfQs1Ym':
+        case 'prod_RtpU6xXuz6TPFe':
           productMessage = 'Thank you for purchasing Rapid! Download your flashcards here: https://drive.google.com/file/d/SET2_LINK';
           break;
-        case 'prod_Ru9KzvfLOGtVOF':
+        case 'prod_RvQF0wfixePqxP':
           productMessage = 'Thank you for purchasing Srovnavaci! Download your flashcards here: https://drive.google.com/file/d/SET3_LINK';
           break;
         default:
