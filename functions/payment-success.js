@@ -31,13 +31,13 @@ exports.handler = async (event) => {
       console.log('Product ID:', productId); // Log the product ID for debugging
       switch (productId) {
         case 'prod_RvQCWmZJqAU0nC':
-          productMessage = 'Thank you for purchasing vse potrebne k priprave! Download your flashcards here: https://drive.google.com/file/d/SET1_LINK';
+          productMessage = 'Děkujeme za váš nákup! Vše potřebné k přípravě najdete zde: https://drive.google.com/drive/folders/1YKCXSK5nkhm4wnDRIR-L8RyYjPZuW2b6?usp=sharing';
           break;
         case 'prod_RtpU6xXuz6TPFe':
-          productMessage = 'Thank you for purchasing Rapid! Download your flashcards here: https://drive.google.com/file/d/SET2_LINK';
+          productMessage = 'Děkujeme za váš nákup Rapidní přípravy! Stáhněte si své kartičky zde: https://drive.google.com/drive/folders/1sXsoWPyyGndm1OUA4XlhFQOoXwbGxv1K?usp=sharing';
           break;
         case 'prod_RvQF0wfixePqxP':
-          productMessage = 'Thank you for purchasing Srovnavaci! Download your flashcards here: https://drive.google.com/file/d/SET3_LINK';
+          productMessage = 'Děkujeme za váš nákup Srovnávací přípravy! Stáhněte si své materiály zde: https://drive.google.com/drive/folders/1sXsoWPyyGndm1OUA4XlhFQOoXwbGxv1K?usp=sharing';
           break;
         default:
           productMessage = 'Thank you for your purchase! Download link will be sent separately.';
