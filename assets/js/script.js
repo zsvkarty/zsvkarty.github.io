@@ -454,4 +454,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Loading Screen
+window.addEventListener('load', function() {
+  const loader = document.querySelector('.loader-wrapper');
+  
+  // Start fade out after a shorter delay
+  setTimeout(() => {
+    loader.classList.add('fade-out');
+    
+    // Remove from DOM after fade out
+    setTimeout(() => {
+      loader.remove();
+    }, 300); // Match the CSS transition duration
+  }, 800); // Reduced from 1000ms to 800ms
+});
+
 
