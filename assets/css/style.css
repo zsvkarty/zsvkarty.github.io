@@ -2687,7 +2687,6 @@ a {
 
 /* Blog Post Page Styles */
 .blog-post {
-  max-width: 800px;
   margin: 0 auto;
   padding: 40px 20px;
   margin-top: 80px; /* Add margin to account for fixed header */
@@ -2792,7 +2791,7 @@ a {
   }
 
   main {
-    padding-top: 60px; /* Add padding to main content area */
+    padding-top: 0;
   }
 
   .blog-post-header {
