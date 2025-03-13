@@ -469,4 +469,37 @@ window.addEventListener('load', function() {
   }, 800); // Reduced from 1000ms to 800ms
 });
 
+// Discount Popup
+function showDiscountPopup() {
+  // Check if popup was already shown in this session
+  if (sessionStorage.getItem('popupShown')) {
+    return;
+  }
+  
+  const popup = document.getElementById('discountPopup');
+  if (popup) {
+    popup.classList.add('show');
+    sessionStorage.setItem('popupShown', 'true');
+  }
+}
+
+// Close popup when clicking the close button
+document.getElementById('closePopup')?.addEventListener('click', () => {
+  const popup = document.getElementById('discountPopup');
+  if (popup) {
+    popup.classList.remove('show');
+  }
+});
+
+// Show popup after 10 seconds
+setTimeout(showDiscountPopup, 10000);
+
+// Close popup when clicking outside
+window.addEventListener('click', (e) => {
+  const popup = document.getElementById('discountPopup');
+  if (e.target === popup) {
+    popup.classList.remove('show');
+  }
+});
+
 
