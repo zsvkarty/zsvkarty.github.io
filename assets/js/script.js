@@ -245,6 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
       reviewsTrack.appendChild(clone);
     });
     
+    
     // Set initial position
     currentPosition = 0;
     updateTrackPosition(false);
@@ -264,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
       slidesToShow = 2;
       scrollSpeed = 0.8;
     } else {
-      slidesToShow = 1.2;
+      slidesToShow = 1; // Changed from 1.2 to 1 to prevent overflow on mobile
       scrollSpeed = 1;
     }
     
