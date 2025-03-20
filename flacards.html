@@ -12,6 +12,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Local Fonts -->
+  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css">
+
+  <style>
+    .pricing-card i {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #ff5733;
+    }
+    .pricing-card.featured i {
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
@@ -57,7 +74,7 @@
         <div class="flashcards-container reveal delay-2">
           <div class="flashcard" onclick="showFullscreenImage('./assets/images/card1.jpg')">
             <div class="flashcard-inner">
-              <ion-icon name="school-outline" class="card-icon"></ion-icon>
+              <i class="fas fa-graduation-cap card-icon"></i>
               <h3>Filozofie</h3>
               <p class="term">Spor o univerzálie v klasickém období</p>
               <span class="click-hint">Klikněte pro zobrazení</span>
@@ -66,7 +83,7 @@
 
           <div class="flashcard" onclick="showFullscreenImage('./assets/images/card2.jpg')">
             <div class="flashcard-inner">
-              <ion-icon name="scale-outline" class="card-icon"></ion-icon>
+              <i class="fas fa-balance-scale card-icon"></i>
               <h3>Právo</h3>
               <p class="term">Co je to relativní právo?</p>
               <span class="click-hint">Klikněte pro zobrazení</span>
@@ -75,7 +92,7 @@
 
           <div class="flashcard" onclick="showFullscreenImage('./assets/images/card3.jpg')">
             <div class="flashcard-inner">
-              <ion-icon name="scale-outline" class="card-icon"></ion-icon>
+              <i class="fas fa-balance-scale card-icon"></i>
               <h3>Právo</h3>
               <p class="term">Co je to absolutní právo?</p>
               <span class="click-hint">Klikněte pro zobrazení</span>
@@ -84,7 +101,7 @@
 
           <div class="flashcard" onclick="showFullscreenImage('./assets/images/card4.jpg')">
             <div class="flashcard-inner">
-              <ion-icon name="trending-up-outline" class="card-icon"></ion-icon>
+              <i class="fas fa-chart-line card-icon"></i>
               <h3>Ekonomie</h3>
               <p class="term">Co je to cyklická nezaměstnanost?</p>
               <span class="click-hint">Klikněte pro zobrazení</span>
@@ -93,7 +110,7 @@
 
           <div class="flashcard" onclick="showFullscreenImage('./assets/images/card5.jpg')">
             <div class="flashcard-inner">
-              <ion-icon name="time-outline" class="card-icon"></ion-icon>
+              <i class="fas fa-clock card-icon"></i>
               <h3>Historie</h3>
               <p class="term">Jaké vojenské konflikty bezprostředně předcházely 1. světové válce?</p>
               <span class="click-hint">Klikněte pro zobrazení</span>
@@ -102,7 +119,7 @@
 
           <div class="flashcard" onclick="showFullscreenImage('./assets/images/card6.jpg')">
             <div class="flashcard-inner">
-              <ion-icon name="trending-up-outline" class="card-icon"></ion-icon>
+              <i class="fas fa-chart-line card-icon"></i>
               <h3>Ekonomie</h3>
               <p class="term">Co je to elasticita poptávky?</p>
               <span class="click-hint">Klikněte pro zobrazení</span>
@@ -114,7 +131,7 @@
         <div class="fullscreen-overlay" id="fullscreenOverlay" onclick="hideFullscreenImage()">
           <img src="" alt="Definice" id="fullscreenImage" />
           <button class="close-overlay" onclick="hideFullscreenImage()">
-            <ion-icon name="close-outline"></ion-icon>
+            <i class="fas fa-times"></i>
           </button>
         </div>
       </div>
@@ -130,7 +147,7 @@
         <div class="pricing-wrapper">
           <div class="pricing-card">
             <a href="https://buy.stripe.com/aEUg0S6xR72pg6Y4gi">
-              <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+              <i class="fas fa-star-half-alt"></i>
               <h3 class="card-title">Vše potřebné k přípravě</h3>
               <data class="card-price" value="199">199 ,-</data>
               <div class="pricing-feature">Základní balíček</div>
@@ -143,7 +160,7 @@
         
           <div class="pricing-card featured">
             <a href="https://buy.stripe.com/6oE5me9K33QddYQ5kk">
-              <ion-icon name="star-half-outline" aria-hidden="true"></ion-icon>
+              <i class="fas fa-star"></i>
               <h3 class="card-title">Rapid příprava</h3>
               <data class="card-price" value="399">399 ,-</data>
               <div class="pricing-feature">Vše z Basic balíčku</div>
@@ -159,7 +176,7 @@
               <span>SLEVA 44%</span>
             </div>
             <a href="https://buy.stripe.com/00geWOf4n0E13kcaEF">
-              <ion-icon name="star" aria-hidden="true"></ion-icon>
+              <i class="fas fa-crown"></i>
               <h3 class="card-title">Srovnávací příprava</h3>
               <div class="price-container">
                 <data class="original-price" value="799">799 ,-</data>
@@ -206,11 +223,11 @@
 
           <ul class="contact-list">
             <li class="contact-item">
-              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+              <i class="fas fa-envelope"></i>
               <a href="mailto:info@dostansenaprava.cz" class="contact-link">info@dostansenaprava.cz</a>
             </li>
             <li class="contact-item">
-              <ion-icon name="globe-outline" aria-hidden="true"></ion-icon>
+              <i class="fas fa-globe"></i>
               <a href="https://dostansenaprava.cz/" class="contact-link">www.dostansenaprava.cz</a>
             </li>
           </ul>
@@ -222,7 +239,7 @@
           <textarea name="message" aria-label="message" placeholder="Vaše zpráva" required class="input-field"></textarea>
           <button type="submit" class="submit-btn">
             <span class="span">Odeslat zprávu</span>
-            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            <i class="fas fa-arrow-right"></i>
           </button>
         </form>
       </div>
@@ -234,16 +251,20 @@
     <div class="container">
       <p class="copyright">
         Tento web je nezávislý a není nijak spojený se společností Scio ani žádnou univerzitou.
+        <br>
+        <a href="pravidla.html" class="copyprav">Pravidla pro vrácení peněz</a>
+        <span class="separator"> | </span>
+        <a href="zasady-ochrany-osobnich-udaju.html" class="copyprav">Zásady ochrany osobních údajů</a>
       </p>
       <ul class="social-list">
         <li>
           <a href="https://www.instagram.com/dostansenaprava/" class="social-link">
-            <ion-icon name="logo-instagram"></ion-icon>
+            <i class="fab fa-instagram"></i>
           </a>
         </li>
         <li>
           <a href="https://www.patreon.com/dostansenaprava" class="social-link">
-            <ion-icon name="logo-patreon"></ion-icon>
+            <i class="fab fa-patreon"></i>
           </a>
         </li>
       </ul>
@@ -251,7 +272,5 @@
   </footer>
 
   <script src="./assets/js/script.js" defer></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
