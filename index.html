@@ -72,6 +72,94 @@
     .pricing-card.featured i {
       color: white;
     }
+
+    .video-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      aspect-ratio: 16/9;
+      background: #000;
+      position: relative;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+      z-index: 1;
+    }
+
+    .preview-video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .video-loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .preview-text {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--text-color);
+      padding: 0 1rem;
+    }
+
+    .preview-cta {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 0 1rem;
+    }
+
+    .btn-large {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .video-container {
+        max-width: 100%;
+        margin: 1rem auto;
+        border-radius: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .video-container {
+        border-radius: 6px;
+      }
+    }
   </style>
 </head>
 
@@ -351,87 +439,28 @@ Určitě mi to pomohlo, už jenom díky těm tipům na začátku."</p>
 
       <section class="section portfolio" id="portfolio" aria-label="portfolio">
         <div class="container">
-
-          <p class="section-subtitle reveal">Kartičky na ZSV</p>
-
+          <p class="section-subtitle">Kartičky na ZSV</p>
           <h2 class="h2 section-title reveal delay-1">Preview našich kartiček</h2>
 
-          <ul class="has-scrollbar">
+          <div class="preview-text reveal">
+            <p>Podívejte se na ukázku našich interaktivních kartiček, které vám pomohou s přípravou na SCIO testy.</p>
+          </div>
 
-            <li class="scrollbar-item">
-              <div class="card">
+          <div class="video-container reveal">
+            <div class="video-overlay"></div>
+            <video autoplay loop muted playsinline class="preview-video" id="previewVideo">
+              <source src="./assets/images/video2.mp4" type="video/mp4">
+              Váš prohlížeč nepodporuje přehrávání videa.
+            </video>
+            <div class="video-loading">
+              <div class="spinner"></div>
+            </div>
+          </div>
 
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/swipe1t.png" width="600" height="675" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-
-                <a href="#portfolio" class="card-content">
-
-                 
-
-                  <h3 class="h3 card-title">Vyzkoušej si jak naše teoretické, tak naše testovací kartičky
-
-                  </h3>
-
-                  
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/swipe2.png" width="600" height="675" loading="lazy" alt="Bona Green"
-                    class="img-cover">
-                </figure>
-
-                <a href="#portfolio" class="card-content">
-
-                 
-
-                  <h3 class="h3 card-title">
-                    <br>
-                    Sv. Augustýn říkal, že je možné poznávat pouze skrze Boha. <br>➡️ Inspirace Platónem a světem ideí.
-                    <br>
-                    <br>
-                    Tomáš Akvinský říkal, že rozum je nezávislý na osvícení. <br>➡️ Zdrojem poznání jsou smysly (inspirace Aristotelem).</h3>
-
-                  
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 600; --height: 675;">
-                  <img src="./assets/images/swipe3.png" width="600" height="675" loading="lazy" alt="Leo Dandora"
-                    class="img-cover">
-                </figure>
-
-                <a href="#portfolio" class="card-content">
-
-                     <!--  <i class="fas fa-arrow-forward" aria-hidden="true"></i>    -->
-
-                  <h3 class="h3 card-title">b) Sv.Augustýn</h3>
-
-                  
-
-                </a>
-
-              </div>
-            </li>
-
-          </ul>
-          <div class="buy-button-container">
-            <a href="flacards.html" target="_blank" class="click-button">
-              Náhled dalších kartiček 
+          <div class="preview-cta reveal">
+            <a href="flacards.html" target="_blank" class="btn btn-primary btn-large">
+              <i class="fas fa-external-link-alt"></i>
+              Vyzkoušet další kartičky
             </a>
           </div>
         </div>
@@ -878,6 +907,17 @@ Určitě mi to pomohlo, už jenom díky těm tipům na začátku."</p>
     - custom js link
   -->
   <script src="./assets/js/script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('previewVideo');
+      const loadingSpinner = document.querySelector('.video-loading');
+
+      // Hide loading spinner when video is ready
+      video.addEventListener('loadeddata', function() {
+        loadingSpinner.style.display = 'none';
+      });
+    });
+  </script>
 
   <script type="application/ld+json">
   {
