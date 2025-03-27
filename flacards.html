@@ -28,10 +28,46 @@
     .pricing-card.featured i {
       color: white;
     }
+    
+    /* Spinner animation styles */
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255, 87, 51, 0.1);
+      border-radius: 50%;
+      border-top: 4px solid var(--theme-color);
+      margin: 20px auto 0;
+      animation: spin 1.2s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div class="loader-wrapper">
+    <div class="loader-content">
+      <div class="loader-text">
+        <span>D</span>
+        <span>O</span>
+        <span>S</span>
+        <span>T</span>
+        <span>A</span>
+        <span>Ň</span>
+      </div>
+      <div class="loader-text">
+        <span>S</span>
+        <span>E</span>
+      </div>
+      <!-- Added spinning circle loader -->
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
+  
   <!-- Header -->
   <header class="header" data-header>
     <div class="container">
