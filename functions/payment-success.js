@@ -37,6 +37,7 @@ exports.handler = async (event) => {
             <p>Děkujeme za váš nákup!</p>
             <p>Vše potřebné k přípravě na zkoušku najdete v následujícím odkazu. Stáhněte si své kartičky a materiály:</p>
             <p><strong>Download link:</strong> <a href="https://drive.google.com/drive/folders/1YKCXSK5nkhm4wnDRIR-L8RyYjPZuW2b6?usp=sharing">Vše potřebné k přípravě</a></p>
+            <p>Pokud odkaz nebude fungovat váš balíček najdete i zde. https://drive.google.com/drive/folders/1YKCXSK5nkhm4wnDRIR-L8RyYjPZuW2b6?usp=sharing</p>
             <p>Pokud budete mít jakékoli otázky, neváhejte nás kontaktovat na <a href="mailto:info@dostansenaprava.cz">info@dostansenaprava.cz</a>.</p>
             <p>S pozdravem,<br>Tým DostanSeNaPrava.cz</p>
           `;
@@ -47,6 +48,7 @@ exports.handler = async (event) => {
             <p>Děkujeme za váš nákup!</p>
             <p>Vaše Rapidní příprava je připravena. Stáhněte si své kartičky zde:</p>
             <p><strong>Download link:</strong> <a href="https://drive.google.com/drive/folders/1sXsoWPyyGndm1OUA4XlhFQOoXwbGxv1K?usp=sharing">Rapidní příprava</a></p>
+            <p>Pokud odkaz nebude fungovat váš balíček najdete i zde. https://drive.google.com/drive/folders/1sXsoWPyyGndm1OUA4XlhFQOoXwbGxv1K?usp=sharing</p>
             <p>Pokud budete mít jakékoli otázky, neváhejte nás kontaktovat na <a href="mailto:info@dostansenaprava.cz">info@dostansenaprava.cz</a>.</p>
             <p>S pozdravem,<br>Tým DostanSeNaPrava.cz</p>
           `;
@@ -57,6 +59,7 @@ exports.handler = async (event) => {
             <p>Děkujeme za váš nákup!</p>
             <p>Vaše Srovnávací příprava je připravena. Stáhněte si své materiály zde:</p>
             <p><strong>Download link:</strong> <a href="https://drive.google.com/drive/folders/1sXsoWPyyGndm1OUA4XlhFQOoXwbGxv1K?usp=sharing">Srovnávací příprava</a></p>
+            <p>Pokud odkaz nebude fungovat váš balíček najdete i zde. https://drive.google.com/drive/folders/1sXsoWPyyGndm1OUA4XlhFQOoXwbGxv1K?usp=sharing</p>
             <p>Pokud budete mít jakékoli otázky, neváhejte nás kontaktovat na <a href="mailto:info@dostansenaprava.cz">info@dostansenaprava.cz</a>.</p>
             <p>S pozdravem,<br>Tým DostanSeNaPrava.cz</p>
           `;
@@ -71,8 +74,13 @@ exports.handler = async (event) => {
       to: email,
       from: 'info@dostansenaprava.cz',
       subject: 'Váš přípravný balíček',
-      text: productMessage, // Plain-text fallback
-      html: htmlMessage,   // HTML version
+      text: productMessage,
+      html: htmlMessage,
+      trackingSettings: {
+        clickTracking: {
+          enable: false
+        }
+      }
     };
 
     console.log('Sending email to:', email, 'with message:', productMessage);
