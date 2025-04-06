@@ -503,4 +503,50 @@ window.addEventListener('click', (e) => {
   }
 });
 
+// Video loading optimization
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.getElementById('previewVideo');
+  const loadingSpinner = document.querySelector('.video-loading');
+  
+  if (!video) return;
+
+  // Create intersection observer for video
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Video is in viewport, start loading
+        video.load();
+        videoObserver.unobserve(video);
+      }
+    });
+  }, {
+    rootMargin: '50px 0px',
+    threshold: 0.1
+  });
+
+  // Observe the video container
+  videoObserver.observe(video);
+
+  // Hide loading spinner when video is ready
+  video.addEventListener('loadeddata', function() {
+    loadingSpinner.style.display = 'none';
+  });
+
+  // Show loading spinner if video needs to buffer
+  video.addEventListener('waiting', function() {
+    loadingSpinner.style.display = 'flex';
+  });
+
+  // Hide loading spinner when video can play
+  video.addEventListener('canplay', function() {
+    loadingSpinner.style.display = 'none';
+  });
+
+  // Handle video errors
+  video.addEventListener('error', function() {
+    console.error('Video loading error:', video.error);
+    loadingSpinner.style.display = 'none';
+  });
+});
+
 

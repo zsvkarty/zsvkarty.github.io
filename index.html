@@ -449,8 +449,18 @@ Určitě mi to pomohlo, už jenom díky těm tipům na začátku."</p>
 
           <div class="video-container reveal">
             <div class="video-overlay"></div>
-            <video autoplay loop muted playsinline class="preview-video" id="previewVideo">
-              <source src="./assets/images/video2.mp4" type="video/mp4">
+            <video 
+              autoplay 
+              loop 
+              muted 
+              playsinline 
+              class="preview-video" 
+              id="previewVideo"
+              preload="none"
+              poster="./assets/images/thumbnail1.jpg"
+              loading="lazy"
+              src="./assets/images/Video2.webm"
+            >
               Váš prohlížeč nepodporuje přehrávání videa.
             </video>
             <div class="video-loading">
