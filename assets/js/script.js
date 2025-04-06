@@ -510,6 +510,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (!video) return;
 
+  // Show loading state immediately
+  loadingSpinner.style.display = 'flex';
+  loadingSpinner.style.opacity = '1';
+
   // Create intersection observer for video
   const videoObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -529,23 +533,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Hide loading spinner when video is ready
   video.addEventListener('loadeddata', function() {
-    loadingSpinner.style.display = 'none';
+    loadingSpinner.style.opacity = '0';
+    setTimeout(() => {
+      loadingSpinner.style.display = 'none';
+    }, 300); // Match the CSS transition duration
   });
 
   // Show loading spinner if video needs to buffer
   video.addEventListener('waiting', function() {
     loadingSpinner.style.display = 'flex';
+    loadingSpinner.style.opacity = '1';
   });
 
   // Hide loading spinner when video can play
   video.addEventListener('canplay', function() {
-    loadingSpinner.style.display = 'none';
+    loadingSpinner.style.opacity = '0';
+    setTimeout(() => {
+      loadingSpinner.style.display = 'none';
+    }, 300);
   });
 
   // Handle video errors
   video.addEventListener('error', function() {
     console.error('Video loading error:', video.error);
-    loadingSpinner.style.display = 'none';
+    loadingSpinner.style.opacity = '0';
+    setTimeout(() => {
+      loadingSpinner.style.display = 'none';
+    }, 300);
   });
 });
 
