@@ -109,48 +109,24 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.5);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      z-index: 9999;
-      gap: 1rem;
-      opacity: 1;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
+      z-index: 3;
     }
 
     .spinner {
-      width: 50px;
-      height: 50px;
-      border: 4px solid rgba(255, 255, 255, 0.3);
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
       border-radius: 50%;
-      border-top-color: #ff5733;
-      border-right-color: #ff5733;
-      border-bottom-color: #ff5733;
+      border-top-color: white;
       animation: spin 1s linear infinite;
-      position: relative;
-      z-index: 10000;
-      display: block;
-      opacity: 1;
-      transform-origin: center;
-    }
-
-    .loading-text {
-      color: white;
-      font-size: 1.1rem;
-      font-weight: 500;
-      text-align: center;
-      position: relative;
-      z-index: 10000;
-      opacity: 1;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      to { transform: rotate(360deg); }
     }
 
     .preview-text {
@@ -185,34 +161,111 @@
         border-radius: 6px;
       }
     }
+
+    .loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+
+    .loader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .loader-spinner {
+      position: relative;
+      width: 60px;
+      height: 60px;
+    }
+
+    .spinner-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 4px solid transparent;
+      border-top-color: #ff5733;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .loader-text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .loader-text {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .loader-text span {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .loader-text span:nth-child(1) { animation-delay: 0.1s; }
+    .loader-text span:nth-child(2) { animation-delay: 0.2s; }
+    .loader-text span:nth-child(3) { animation-delay: 0.3s; }
+    .loader-text span:nth-child(4) { animation-delay: 0.4s; }
+    .loader-text span:nth-child(5) { animation-delay: 0.5s; }
+    .loader-text span:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="loader-wrapper">
     <div class="loader-content">
-      <div class="loader-text">
-        <span>D</span>
-        <span>O</span>
-        <span>S</span>
-        <span>T</span>
-        <span>A</span>
-        <span>Ň</span>
+      <div class="loader-spinner">
+        <div class="spinner-circle"></div>
       </div>
-      <div class="loader-text">
-        <span>S</span>
-        <span>E</span>
-      </div>
-      <div class="loader-text">
-        <span>N</span>
-        <span>A</span>
-      </div>
-      <div class="loader-text">
-        <span>P</span>
-        <span>R</span>
-        <span>Á</span>
-        <span>V</span>
-        <span>A</span>
+      <div class="loader-text-container">
+        <div class="loader-text">
+          <span>D</span>
+          <span>O</span>
+          <span>S</span>
+          <span>T</span>
+          <span>A</span>
+          <span>Ň</span>
+        </div>
+        <div class="loader-text">
+          <span>S</span>
+          <span>E</span>
+        </div>
+        <div class="loader-text">
+          <span>N</span>
+          <span>A</span>
+        </div>
+        <div class="loader-text">
+          <span>P</span>
+          <span>R</span>
+          <span>Á</span>
+          <span>V</span>
+          <span>A</span>
+        </div>
       </div>
     </div>
   </div>
@@ -471,14 +524,24 @@ Určitě mi to pomohlo, už jenom díky těm tipům na začátku."</p>
             <p>Podívejte se na ukázku našich interaktivních kartiček, které vám pomohou s přípravou na SCIO testy.</p>
           </div>
 
-          <div class="video-container">
+          <div class="video-container reveal">
             <div class="video-overlay"></div>
-            <video class="preview-video" autoplay muted loop playsinline>
-              <source src="assets/video/Video2.webm" type="video/webm">
+            <video 
+              autoplay 
+              loop 
+              muted 
+              playsinline 
+              class="preview-video" 
+              id="previewVideo"
+              preload="none"
+              poster="./assets/images/thumbnail1.jpg"
+              loading="lazy"
+              src="./assets/images/Video2.webm"
+            >
+              Váš prohlížeč nepodporuje přehrávání videa.
             </video>
             <div class="video-loading">
               <div class="spinner"></div>
-              <div class="loading-text">Loading video...</div>
             </div>
           </div>
 
@@ -941,6 +1004,20 @@ Určitě mi to pomohlo, už jenom díky těm tipům na začátku."</p>
       // Hide loading spinner when video is ready
       video.addEventListener('loadeddata', function() {
         loadingSpinner.style.display = 'none';
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loader = document.querySelector('.loader-wrapper');
+      
+      // Hide loader after page is fully loaded
+      window.addEventListener('load', function() {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 500);
       });
     });
   </script>
