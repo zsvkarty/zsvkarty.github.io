@@ -233,6 +233,414 @@
         transform: translateY(0);
       }
     }
+    
+    /* Review discount banner */
+    .review-discount-banner {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .review-discount-banner:hover {
+      background-color: #45a049;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .click-indicator {
+      display: inline-block;
+      animation: bounce 1.5s infinite;
+      margin-left: 8px;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { opacity: 0.7; }
+    }
+    
+    .review-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .review-popup-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .close-review-popup {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #999;
+      border: none;
+      background: transparent;
+    }
+    
+    .close-review-popup:hover {
+      color: #333;
+    }
+    
+    .discount-code-box {
+      background-color: #f5f5f5;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      border: 2px dashed #4CAF50;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Student testimonials styles */
+    .student-testimonials {
+      padding: 80px 0;
+      background-color: #f9f9f9;
+    }
+
+    .testimonials-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .testimonials-header h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: 700;
+      font-family: var(--ff-poppins), 'Poppins', sans-serif;
+    }
+
+    .testimonials-header p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-family: var(--ff-mulish), 'Mulish', sans-serif;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 12px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-initials {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #333;
+      margin-right: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-info h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .testimonial-info p {
+      margin: 8px 0 0 0;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .testimonial-content {
+      color: #333 !important;
+      line-height: 1.6 !important;
+      font-style: italic !important;
+      font-size: 2.2rem !important;
+      flex-grow: 1 !important;
+      position: relative !important;
+    }
+
+    .testimonial-content p {
+      position: relative !important;
+      padding-left: 38px !important;
+      font-size: 1.76rem !important;
+      line-height: 1.5 !important;
+      margin-bottom: 0 !important;
+      max-width: none !important;
+      width: auto !important;
+    }
+
+    .testimonial-content p::before {
+      content: "\201C" !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: -12px !important;
+      font-size: 4rem !important;
+      color: #aaa !important;
+      font-family: Georgia, serif !important;
+    }
+    
+    /* Make sure no other styles override these */
+    .testimonial-card * {
+      max-width: none !important;
+    }
+    
+    @media (max-width: 992px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .testimonials-header h2 {
+        font-size: 2.2rem;
+      }
+    }
+    
+    /* Course preview section styles */
+    .course-preview {
+      padding: 80px 0;
+      background-color: #f9f9f9;
+    }
+    
+    .course-preview-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .course-preview-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .course-preview-header h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: 700;
+      font-family: var(--ff-poppins), 'Poppins', sans-serif;
+    }
+    
+    .course-preview-header p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-family: var(--ff-mulish), 'Mulish', sans-serif;
+    }
+    
+    .course-preview-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      padding: 30px 0;
+    }
+    
+    .course-preview-image {
+      flex-basis: 45%;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .course-preview-details {
+      flex-basis: 55%;
+    }
+    
+    .course-preview-details h4 {
+      font-size: 2.5rem;
+      color: var(--dark-color);
+      margin-bottom: 15px;
+    }
+    
+    .course-preview-details p.lead {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+    
+    .feature-item {
+      display: flex;
+      margin-bottom: 30px !important;
+      padding: 5px !important;
+      align-items: flex-start;
+    }
+    
+    .feature-item i {
+      color: var(--primary-color);
+      font-size: 24px !important;
+      margin-right: 20px !important;
+      padding: 10px;
+      background-color: rgba(255, 87, 34, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
+      height: 42px;
+    }
+    
+    .feature-text {
+      flex: 1;
+    }
+    
+    .feature-text h5 {
+      font-size: 1.43rem !important;
+      margin-bottom: 5px;
+      color: var(--dark-color);
+    }
+    
+    .feature-text p {
+      font-size: 1.235rem !important;
+      color: var(--text-color);
+      margin: 0;
+      line-height: 1.5 !important;
+    }
+    
+    .try-flashcards-btn {
+      display: inline-block;
+      background-color: var(--theme-color);
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+      box-shadow: 0 8px 20px rgba(255, 87, 51, 0.3);
+      width: 100%;
+      letter-spacing: 0.5px;
+    }
+    
+    .try-flashcards-btn i {
+      margin-right: 10px;
+    }
+    
+    .try-flashcards-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(255, 87, 51, 0.4);
+      background-color: #e64a19;
+    }
+    
+    @media (max-width: 992px) {
+      .course-preview-content {
+        flex-direction: column;
+      }
+      
+      .course-preview-image,
+      .course-preview-details {
+        flex: 0 0 100%;
+      }
+    }
+
+    /* Testimonial text reduction by 20% */
+    .testimonial-content p {
+      font-size: 1.76rem !important;
+      line-height: 1.5 !important;
+    }
+    
+    /* Feature text increase by 30% */
+    .feature-text h5 {
+      font-size: 1.43rem !important;
+    }
+    
+    .feature-text p {
+      font-size: 1.235rem !important;
+      line-height: 1.5 !important;
+    }
+    
+    /* Adjust spacing for larger feature text */
+    .feature-item {
+      margin-bottom: 30px !important;
+      padding: 5px !important;
+    }
+    
+    .course-preview-details {
+      padding: 0 15px !important;
+    }
   </style>
 </head>
 
@@ -299,7 +707,7 @@
 
 
           <li>
-            <a href="#portfolio" class="navbar-link" data-nav-link>Preview</a>
+            <a href="#course-preview" class="navbar-link" data-nav-link>Preview</a>
           </li>
 
           <li>
@@ -374,7 +782,7 @@
             </ul>
 
             <div class="hero-cta">
-              <a href="#portfolio" class="btn btn-primary">Vyzkoušet ukázkové kartičky</a>
+              <a href="#course-preview" class="btn btn-primary">Prohlédnout náš kurz</a>
               <a href="#price" class="btn btn-secondary">Zobrazit ceník</a>
             </div>
 
@@ -390,166 +798,133 @@
         - #REVIEWS
       -->
 
-      <section class="section reviews" id="reviews" aria-label="reviews">
-        <div class="container">
-          <p class="section-subtitle reveal">Recenze</p>
-          <h2 class="h2 section-title reveal delay-1">Co o nás říkají</h2>
+      <section class="student-testimonials" id="testimonials">
+        <div class="testimonials-container">
+          <div class="testimonials-header">
+            <h2 class="h2 section-title">Co říkají naši studenti</h2>
+            <p class="section-text">Přečti si zkušenosti studentů, kteří se díky naší přípravě dostali na právnické fakulty.</p>
+          </div>
           
-          <div class="reviews-slider">
-            <div class="reviews-track">
-              <!-- Review Card 1 -->
-              <div class="review-slide">
-                <div class="review-card">
-                  <div class="review-content">
-                    <p>"Díky těmto kartičkám jsem se dostal na práva v Praze. Skvělá příprava, která mě bavila!"</p>
-                  </div>
-                  <div class="reviewer-info">
-                    <div class="reviewer-avatar">
-                      <img src="./assets/images/avatars/man1.jpg" alt="Tomáš K.">
-                    </div>
-                    <div class="reviewer-details">
-                      <h4>Tomáš K.</h4>
-                      <p>Student práv, 1. ročník</p>
-                    </div>
-                  </div>
-                  <div class="review-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
+          <div class="testimonials-grid">
+            <!-- Jan Novák -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-initials">JN</div>
+                <div class="testimonial-info">
+                  <h3>Jan Novák</h3>
+                  <p>Přijat na PF UK</p>
                 </div>
               </div>
-              
-              <!-- Review Card 2 -->
-              <div class="review-slide">
-                <div class="review-card">
-                  <div class="review-content">
-                    <p>"Naprosto skvělá pomůcka! Z 70. percentilu jsem se dostala na 85+. Doporučuji všem!"</p>
-                  </div>
-                  <div class="reviewer-info">
-                    <div class="reviewer-avatar">
-                      <img src="./assets/images/avatars/woman1.jpg" alt="Karolína M.">
-                    </div>
-                    <div class="reviewer-details">
-                      <h4>Karolína M.</h4>
-                      <p>Studentka</p>
-                    </div>
-                  </div>
-                  <div class="review-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Review Card 3 -->
-              <div class="review-slide">
-                <div class="review-card">
-                  <div class="review-content">
-                    <p>"Ahoj, mockrát díky.
-Určitě mi to pomohlo, už jenom díky těm tipům na začátku."</p>
-                  </div>
-                  <div class="reviewer-info">
-                    <div class="reviewer-avatar">
-                      <img src="./assets/images/avatars/man2.jpg" alt="Martin V.">
-                    </div>
-                    <div class="reviewer-details">
-                      <h4>Martin V.</h4>
-                      <p>Přijat na PF UK</p>
-                    </div>
-                  </div>
-                  <div class="review-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Review Card 4 -->
-              <div class="review-slide">
-                <div class="review-card">
-                  <div class="review-content">
-                    <p>"Dobrý večer, na konci přednášky jste žádal o hodnocení. <br> Vaše prezentování mi opravdu pomohlo, říkal jste to logicky, tak abychom to pochopili <br> a za mě užitečné rady jakým stylem psát samotné zkoušky <br>(do dnešního dne mi nikdo nedal radu jak na to"</p>
-                  </div>
-                  <div class="reviewer-info">
-                    <div class="reviewer-avatar">
-                      <img src="./assets/images/avatars/woman2.jpg" alt="Uživatelka">
-                    </div>
-                    <div class="reviewer-details">
-                      <h4>Uživatelka</h4>
-                      <p>Uchazečka na práva</p>
-                    </div>
-                  </div>
-                  <div class="review-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                </div>
+              <div class="testimonial-content">
+                <p>"Díky kurzu Dostaň se na práva jsem se dostal na svou vysněnou fakultu. Materiály byly přehledné a cvičné testy mi pomohly se dobře připravit na skutečné SCIO testy."</p>
               </div>
             </div>
             
-            <div class="slider-controls">
-              <button class="prev-btn" aria-label="Previous review">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <button class="next-btn" aria-label="Next review">
-                <i class="fas fa-chevron-right"></i>
-              </button>
+            <!-- Karolína Procházková -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-initials">KP</div>
+                <div class="testimonial-info">
+                  <h3>Karolína Procházková</h3>
+                  <p>Přijata na PF MU</p>
+                </div>
+              </div>
+              <div class="testimonial-content">
+                <p>"Webináře a konzultace mi pomohly pochopit, jak přemýšlet při řešení úloh. Díky tomu jsem dosáhla percentilu 95 a dostala se na práva v Brně."</p>
+              </div>
+            </div>
+            
+            <!-- Tomáš Kovář -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-initials">TK</div>
+                <div class="testimonial-info">
+                  <h3>Tomáš Kovář</h3>
+                  <p>Přijat na PF UP</p>
+                </div>
+              </div>
+              <div class="testimonial-content">
+                <p>"Nejlepší investice do mé budoucnosti. Kurz mi pomohl systematicky se připravit na všechny části SCIO testů a díky tomu jsem se dostal na práva v Olomouci."</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- 
-        - #PORTFOLIO
+        - #PORTFOLIO (Replaced with Course Preview)
       -->
 
-      <section class="section portfolio" id="portfolio" aria-label="portfolio">
-        <div class="container">
-          <p class="section-subtitle">Kartičky na ZSV</p>
-          <h2 class="h2 section-title reveal delay-1">Preview našich kartiček</h2>
-
-          <div class="preview-text reveal">
-            <p>Podívejte se na ukázku našich interaktivních kartiček, které vám pomohou s přípravou na SCIO testy.</p>
+      <section class="course-preview" id="course-preview">
+        <div class="course-preview-container">
+          <div class="course-preview-header">
+            <h2 class="h2 section-title">Náš kompletní kurz přípravy</h2>
+            <p class="section-text">Vše, co potřebuješ k úspěšnému zvládnutí SCIO testů a přijetí na právnickou fakultu.</p>
           </div>
-
-          <div class="video-container reveal">
-            <div class="video-overlay"></div>
-            <video 
-              autoplay 
-              loop 
-              muted 
-              playsinline 
-              class="preview-video" 
-              id="previewVideo"
-              preload="none"
-              poster="./assets/images/thumbnail1.jpg"
-              loading="lazy"
-              src="./assets/images/Video2.webm"
-            >
-              Váš prohlížeč nepodporuje přehrávání videa.
-            </video>
-            <div class="video-loading">
-              <div class="spinner"></div>
+          
+          <div class="course-preview-content">
+            <div class="course-preview-image">
+              <div class="video-container">
+                <div class="video-overlay"></div>
+                <video 
+                  autoplay 
+                  loop 
+                  muted 
+                  playsinline 
+                  class="preview-video" 
+                  id="previewVideo"
+                  preload="none"
+                  poster="./assets/images/thumbnail1.jpg"
+                  loading="lazy"
+                  src="./assets/images/Video2.webm"
+                >
+                  Váš prohlížeč nepodporuje přehrávání videa.
+                </video>
+                <div class="video-loading">
+                  <div class="spinner"></div>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div class="preview-cta reveal">
-            <a href="flacards.html" target="_blank" class="btn btn-primary btn-large">
-              <i class="fas fa-external-link-alt"></i>
-              Vyzkoušet další kartičky
-            </a>
+            
+            <div class="course-preview-details">
+              <div class="course-features">
+                <div class="feature-item">
+                  <i class="fas fa-graduation-cap"></i>
+                  <div class="feature-text">
+                    <h5>Kompletní studijní materiály</h5>
+                    <p>Přehledně zpracované materiály pokrývající všechny oblasti SCIO testů pro právnické fakulty.</p>
+                  </div>
+                </div>
+                
+                <div class="feature-item">
+                  <i class="fas fa-laptop"></i>
+                  <div class="feature-text">
+                    <h5>Interaktivní aplikace</h5>
+                    <p>S námi to máš zábavnější. Naše interaktivní ZSV aplikace ti pomůže prohloubit tvoji znalost společenských věd.</p>
+                  </div>
+                </div>
+                
+                <div class="feature-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div class="feature-text">
+                    <h5>Cvičné testy</h5>
+                    <p>Více než 1000 cvičných úloh s podrobným vysvětlením řešení.</p>
+                  </div>
+                </div>
+                
+                <div class="feature-item">
+                  <i class="fas fa-book"></i>
+                  <div class="feature-text">
+                    <h5>Kompletní učebnice na ZSV</h5>
+                    <p>Přístup k našim podrobným učebnicím pokrývajícím celou látku základů společenských věd.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <a href="https://karticky.dostansenaprava.cz" target="_blank" class="try-flashcards-btn">
+                <i class="fas fa-external-link-alt"></i> Vyzkoušet kartičky zdarma
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -715,6 +1090,13 @@ Určitě mi to pomohlo, už jenom díky těm tipům na začátku."</p>
             <h2>CENY PACKŮ</h2>
           </div>
           
+          <!-- Review discount banner -->
+          <div class="review-discount-banner" id="reviewBanner">
+            <i class="fas fa-tag"></i> 
+            <span>Pokud nám slíbíš že nám napíšeš review, dostaneš 50 korun slevu!</span>
+            <span class="click-indicator">👆</span>
+          </div>
+          
           <div class="pricing-wrapper">
             <div class="pricing-card">
               <a href="https://buy.stripe.com/aEUg0S6xR72pg6Y4gi">
@@ -743,33 +1125,10 @@ Určitě mi to pomohlo, už jenom díky těm tipům na začátku."</p>
             </div>
           
             <div class="pricing-card">
-              <div class="discount-badge">
-                <span>SLEVA 44%</span>
-              </div>
               <a href="https://buy.stripe.com/00geWOf4n0E13kcaEF">
                 <i class="fas fa-crown"></i>
                 <h3 class="card-title">Srovnávací příprava</h3>
-                <div class="price-container">
-                  <data class="original-price" value="799">799 ,-</data>
-                  <data class="card-price discount-price" value="449">449 ,-</data>
-                </div>
-                <div class="countdown-container">
-                  <div class="countdown-text">Nabídka končí za:</div>
-                  <div class="countdown" id="countdown-timer">
-                    <div class="countdown-item">
-                      <span class="countdown-value" id="countdown-hours">48</span>
-                      <span class="countdown-label">h</span>
-                    </div>
-                    <div class="countdown-item">
-                      <span class="countdown-value" id="countdown-minutes">00</span>
-                      <span class="countdown-label">m</span>
-                    </div>
-                    <div class="countdown-item">
-                      <span class="countdown-value" id="countdown-seconds">00</span>
-                      <span class="countdown-label">s</span>
-                    </div>
-                  </div>
-                </div>
+                <data class="card-price" value="799">799 ,-</data>
                 <div class="pricing-feature">Vše z Rapid balíčku</div>
                 <div class="pricing-feature">VIP materiály</div>
                 <div class="pricing-feature">Test s přepočtem na percentil</div>
@@ -1030,7 +1389,46 @@ Určitě mi to pomohlo, už jenom díky těm tipům na začátku."</p>
     "logo": "https://dostansenaprava.cz/assets/images/kartickylogo1.png"
   }
   </script>
+  
+  <!-- Review popup -->
+  <div class="review-popup" id="reviewPopup">
+    <div class="review-popup-content">
+      <button class="close-review-popup" id="closeReviewPopup">&times;</button>
+      <h3>Získejte slevu 50 Kč!</h3>
+      <p>Slibujete nám, že po nákupu napíšete upřímnou recenzi na naše materiály?</p>
+      <div class="discount-code-box">
+        SCIO10
+      </div>
+      <p>Použijte tento kód při platbě pro slevu 50 Kč z jakéhokoliv balíčku.</p>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const reviewBanner = document.getElementById('reviewBanner');
+      const reviewPopup = document.getElementById('reviewPopup');
+      const closeReviewPopup = document.getElementById('closeReviewPopup');
+      
+      // Open review popup when clicking the banner
+      reviewBanner.addEventListener('click', function() {
+        reviewPopup.style.display = 'flex';
+      });
+      
+      // Close review popup
+      closeReviewPopup.addEventListener('click', function() {
+        reviewPopup.style.display = 'none';
+      });
+      
+      // Close popup when clicking outside
+      window.addEventListener('click', function(event) {
+        if (event.target === reviewPopup) {
+          reviewPopup.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
+
 
