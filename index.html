@@ -641,6 +641,148 @@
     .course-preview-details {
       padding: 0 15px !important;
     }
+    
+    /* Fix pricing card centering issues */
+    .pricing-card {
+      text-align: center !important;
+      display: flex !important;
+      position: relative !important;
+    }
+    
+    .pricing-card a {
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    
+    .pricing-card .card-title {
+      text-align: center !important;
+      width: 100% !important;
+    }
+    
+    /* Fix vertical spacing in the third pricing card */
+    .pricing-card:nth-child(3) a {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      height: 100% !important;
+    }
+    
+    /* Create a flex container for features to push them down */
+    .pricing-card:nth-child(3) a {
+      padding-top: 20px !important;
+    }
+    
+    /* Add spacing after the price */
+    .pricing-card:nth-child(3) .card-price {
+      margin-bottom: 30px !important;
+    }
+    
+    /* Alignment fixes for all pricing cards */
+    .pricing-wrapper {
+      display: flex !important;
+      align-items: stretch !important;
+    }
+    
+    /* Sale styling for first pricing card */
+    .pricing-card:first-child {
+      position: relative !important;
+      box-shadow: 0 0 20px rgba(255, 73, 36, 0.6) !important;
+      border: 3px solid #ff4924 !important;
+      overflow: visible !important;
+      z-index: 2 !important;
+      background: linear-gradient(to bottom, #fff, #fff, #fff7f5) !important;
+    }
+    
+    .pricing-card:first-child:before {
+      content: "-40%" !important;
+      position: absolute !important;
+      top: -20px !important;
+      right: -15px !important;
+      background-color: #ff4924 !important;
+      color: white !important;
+      padding: 10px !important;
+      border-radius: 50% !important;
+      font-size: 18px !important;
+      font-weight: bold !important;
+      z-index: 2 !important;
+      width: 60px !important;
+      height: 60px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3) !important;
+      animation: pulse 1.5s infinite !important;
+    }
+    
+    /* Price container styling */
+    .price-container {
+      position: relative !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      margin: 10px 0 20px !important;
+      width: 100% !important;
+    }
+    
+    .original-price {
+      position: absolute !important;
+      top: -15px !important;
+      right: 60px !important;
+      color: #999 !important;
+      text-decoration: line-through !important;
+      font-size: 0.9rem !important;
+      font-weight: normal !important;
+      transform: rotate(-15deg) !important;
+      background-color: rgba(255, 73, 36, 0.1) !important;
+      padding: 3px 8px !important;
+      border-radius: 10px !important;
+    }
+    
+    /* Make all card prices the same size */
+    .pricing-card .card-price {
+      font-family: var(--ff-poppins), "Poppins", sans-serif !important;
+      font-size: var(--fs-20) !important; /* Use the same size as other cards */
+      font-weight: var(--fw-500) !important;
+      margin-bottom: 20px !important; /* Consistent margin below prices */
+    }
+    
+    /* Fix the specific alignment issues in the first card */
+    .pricing-card:first-child .card-price {
+      color: #ff4924 !important;
+      margin-top: 0 !important;
+    }
+    
+    /* Ensure consistent spacing between elements */
+    .pricing-card .pricing-feature {
+      margin: 5px 0 !important;
+      padding: 5px 0 !important;
+    }
+    
+    /* Remove the transform that was causing misalignment */
+    .pricing-card:first-child {
+      transform: none !important;
+    }
+    
+    /* Make sale badge positioned consistently with other cards */
+    .pricing-card:first-child .card-title,
+    .pricing-card:first-child i {
+      margin-top: 0 !important;
+    }
+    
+    /* Ensure consistent height of all pricing cards */
+    .pricing-card {
+      height: auto !important;
+      display: flex !important;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
   </style>
 </head>
 
@@ -678,6 +820,7 @@
     </div>
   </div>
 
+  <!-- Remove the popup that shows after 10-15 seconds
   <div class="discount-popup" id="discountPopup">
     <div class="discount-popup-content">
       <button class="close-popup" id="closePopup">&times;</button>
@@ -689,6 +832,7 @@
       <p class="discount-description">Použijte tento kód při nákupu</p>
     </div>
   </div>
+  -->
   
   <!-- 
     - #HEADER
@@ -1101,11 +1245,14 @@
             <div class="pricing-card">
               <a href="https://buy.stripe.com/aEUg0S6xR72pg6Y4gi">
                 <i class="fas fa-star-half-alt"></i>
-                <h3 class="card-title">Vše potřebné k přípravě</h3>
-                <data class="card-price" value="199">199 ,-</data>
+                <h3 class="card-title">Studijní kartičky</h3>
+                <div class="price-container">
+                  <data class="card-price" value="149">149 Kč</data>
+                  <span class="original-price">249 Kč</span>
+                </div>
                 <div class="pricing-feature">Teoretická část</div>
                 <div class="pricing-feature">Praktická část</div>
-                <div class="pricing-feature">Komplexní příprav</div>
+                <div class="pricing-feature">Komplexní příprava</div>
                 <div class="pricing-feature">Základní podpora</div>
                 <button>Vybrat balíček</button>
               </a>
@@ -1378,6 +1525,12 @@
           loader.style.display = 'none';
         }, 500);
       });
+
+      // Override the showDiscountPopup function to prevent popup from showing
+      window.showDiscountPopup = function() {
+        // Do nothing - popup disabled
+        return false;
+      };
     });
   </script>
 
@@ -1397,7 +1550,7 @@
       <h3>Získejte slevu 50 Kč!</h3>
       <p>Slibujete nám, že po nákupu napíšete upřímnou recenzi na naše materiály?</p>
       <div class="discount-code-box">
-        SCIO10
+        RECENZE50
       </div>
       <p>Použijte tento kód při platbě pro slevu 50 Kč z jakéhokoliv balíčku.</p>
     </div>
