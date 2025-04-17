@@ -1730,37 +1730,6 @@
       display: inline-block; /* Prevent taking full width */
     }
 
-    .highlighted-text {
-      position: relative; /* Needed for pseudo-element positioning */
-      display: inline-block; /* Ensures pseudo-element stays within bounds */
-      /* Remove static background styles */
-      padding: 0 0.1em; /* Minimal padding adjustment if needed */
-      margin: 0 -0.1em;
-    }
-
-    .highlighted-text::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0; /* Position at the bottom */
-      height: 45%; /* Height of the highlight */
-      width: 0; /* Start with zero width */
-      background-color: rgba(255, 241, 118, 0.8); /* Highlight color */
-      z-index: -1; /* Place behind the text */
-      animation: highlight-draw 0.6s ease-out forwards;
-      /* Start animation slightly after text reveals */
-      animation-delay: 0.8s; /* Corresponds roughly to reveal delay-3 */
-    }
-
-    @keyframes highlight-draw {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
-
     /* Background flashcards */
     .flashcard-bg {
       position: absolute;
@@ -1876,17 +1845,6 @@
         max-width: 90%; /* Prevent stretching too wide */
         /* Base styles now handle most styling */
       }
-
-      /* Make sure mobile header doesn't force white background by default */
-      .header {
-        /* Remove or comment out any background-color: var(--white); here */
-        /* The .header.active class will handle the white background on scroll */
-      }
-
-      /* Add animation delay adjustment for mobile if needed */
-      .highlighted-text::after {
-        animation-delay: 0.8s; /* Adjust if reveal delays differ on mobile */
-      }
     }
 
     @media (max-width: 576px) {
@@ -1920,6 +1878,35 @@
       .simple-disclaimer {
         font-size: 0.9rem; /* Override for smallest screens */
         padding: 8px 12px;
+      }
+    }
+    .highlighted-text {
+      position: relative;
+      display: inline;
+      color: inherit;
+      padding: 0 0.2em;
+      margin: 0 -0.2em;
+      z-index: 1;
+    }
+    
+    .highlighted-text::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0%;
+      background-color: rgba(255, 241, 118, 0.6); /* Yellowish highlight */
+      z-index: -1;
+      animation: highlightAnimation 1.5s forwards 0.5s;
+    }
+    
+    @keyframes highlightAnimation {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
       }
     }
   </style>
