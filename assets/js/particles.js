@@ -1,7 +1,7 @@
 // Particle system for hero section
 document.addEventListener("DOMContentLoaded", () => {
     const heroSection = document.querySelector(".hero")
-    if (!heroSection) return
+    if (!heroSection || heroSection.classList.contains("no-particles")) return
   
     // Create canvas element
     const canvas = document.createElement("canvas")

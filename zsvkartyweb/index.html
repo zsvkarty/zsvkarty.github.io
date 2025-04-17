@@ -30,6 +30,50 @@
   -->
   <link rel="preload" as="image" href="./assets/images/question1.png">
 
+  <style>
+    /* Fix for card title text flow */
+    .card-title, .h3.card-title {
+      display: block;
+      white-space: normal !important;
+      word-break: normal !important;
+      overflow: visible !important;
+      width: 100% !important;
+      text-align: left !important;
+      text-wrap: balance;
+      padding: 5px;
+      margin: 0;
+    }
+    
+    .card-content {
+      display: block !important;
+      overflow: visible !important;
+      text-align: left !important;
+    }
+
+    /* Force the paragraph style for card text */
+    .card-title, .h3.card-title {
+      font-size: 18px !important;
+      line-height: 1.5 !important;
+      text-transform: none !important;
+    }
+    
+    /* Remove any flex/grid display that might be causing issues */
+    .card, .card-content, .card-title {
+      display: block !important;
+    }
+
+    /* Remove line breaks in the text */
+    .card-title br:not(:first-child) {
+      display: none;
+    }
+    
+    /* Force the arrows to appear inline */
+    .card-title br + ➡️ {
+      display: inline;
+      margin-left: 5px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -104,9 +148,7 @@
            
             <p class="section-subtitle">Kartičky pro přípravu na Scio test ze ZSV </p>
 
-            <h1 class="h1 hero-title">Nauč se na SCIA bez stresu a
-              zábavně
-            </h1>
+            <h1 class="h1 hero-title main-heading">Nauč se na SCIA bez stresu a zábavně</h1>
 
             <ul class="hero-list">
 
@@ -211,18 +253,9 @@
                 </figure>
 
                 <a href="#portfolio" class="card-content">
-
-                 
-
                   <h3 class="h3 card-title">
-                    <br>
-                    Sv. Augustýn říkal, že je možné poznávat pouze skrze Boha. <br>➡️ Inspirace Platónem a světem ideí.
-                    <br>
-                    <br>
-                    Tomáš Akvinský říkal, že rozum je nezávislý na osvícení. <br>➡️ Zdrojem poznání jsou smysly (inspirace Aristotelem).</h3>
-
-                  
-
+                    Sv. Augustýn říkal, že je možné poznávat pouze skrze Boha. ➡️ Inspirace Platónem a světem ideí. Tomáš Akvinský říkal, že rozum je nezávislý na osvícení. ➡️ Zdrojem poznání jsou smysly (inspirace Aristotelem).
+                  </h3>
                 </a>
 
               </div>
